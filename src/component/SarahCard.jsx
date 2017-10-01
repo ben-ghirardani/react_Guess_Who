@@ -22,8 +22,8 @@ class SarahCard extends React.Component {
             selected: true,
             image: "https://openclipart.org/image/2400px/svg_to_png/174484/Red-Cross.png" 
         } )
-        let currentID = Math.floor(this.state.id);
-        this.props.removeSelection(currentID);
+        let name = this.state.name;
+        this.props.removeSelection(name);
         this.props.checkForWinner();
     }
 

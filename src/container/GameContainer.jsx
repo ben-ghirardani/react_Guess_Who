@@ -10,22 +10,27 @@ class GameContainer extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            remainingChoices: [0, 1, 2, 3],
-            winningChoice: 3,
+            remainingChoices: ["Dave", "Emily", "John", "Sarah"],
+            winningChoice: "John",
             endGameMessage: "" 
         }
     }
 
-    removeSelection( eventData ) {
-        let choicesLeft = this.state.remainingChoices.bind(this);
-        choicesLeft.splice( eventData, 1 );
+    removeSelection( name ) {
+        for (var i = 0; i < this.state.remainingChoices.length; i++) {
+            if ( i === name ) {
+                let a = this.state.remainingChoices.indexOf(i);
+                this.state.remainingChoices.splice( a, 1 );
+            } else {
+                return
+            }
+        }
     }
 
     checkForWinner() {
-        let peopleLeft = this.state.remainingChoices;
-        if ( peopleLeft.length > 1 ) {
+        if ( this.state.remainingChoices.length > 1 ) {
             return
-        } for (var i = 0; i < peopleLeft.length; i++) {
+        } for (var i = 0; i < this.state.remainingChoices.length; i++) {
             if ( i === this.state.winningChoice ) {
                 this.setState( { endGameMessage: "You win!" } )
             } else {
