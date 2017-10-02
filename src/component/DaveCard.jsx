@@ -12,6 +12,7 @@ class DaveCard extends React.Component {
             name: "Dave",
             hairColour: "brown",
             glasses: false,
+            // do I need selected now? Trying to use the click event to manipulate the array.
             selected: false,
             image: "https://i.pinimg.com/736x/4f/de/fe/4fdefe7a18c0933838cad7d76e5529ff--short-textured-haircuts-mens-short-haircuts.jpg"
         }

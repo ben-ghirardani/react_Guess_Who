@@ -21,8 +21,6 @@ class GameContainer extends React.Component {
             if ( i === name ) {
                 let a = this.state.remainingChoices.indexOf(i);
                 this.state.remainingChoices.splice( a, 1 );
-            } else {
-                return
             }
         }
     }
