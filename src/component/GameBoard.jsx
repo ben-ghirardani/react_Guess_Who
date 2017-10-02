@@ -1,23 +1,26 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-import DaveCard from '../component/DaveCard';
-import SarahCard from '../component/SarahCard';
-import JohnCard from '../component/JohnCard';
-import EmilyCard from '../component/EmilyCard';
-// import GameContainer from '../container/GameContainer';
+import Card from '../component/Card';
 
 class GameBoard extends React.Component {
 
     render() {
-        return(
+
+        const cards = this.props.data.map((object, index) => {
+            return <Card 
+                        character={object} key={index} 
+                        removeSelection={ this.props.removeSelection } 
+                        checkForWinner={ this.props.checkForWinner }
+                        crossOutImg={ this.props.crossOutImg }
+                        />
+        })
+
+        return (
         <section className="game-board">
-            <DaveCard checkForWinner={ this.props.checkForWinner } removeSelection={ this.props.removeSelection } />
-            <SarahCard checkForWinner={ this.props.checkForWinner } removeSelection={ this.props.removeSelection } />
-            <JohnCard checkForWinner={ this.props.checkForWinner } removeSelection={ this.props.removeSelection } />
-            <EmilyCard checkForWinner={ this.props.checkForWinner } removeSelection={ this.props.removeSelection } />
+            {cards}
         </section>
         )
     }
+
 
 }
 
